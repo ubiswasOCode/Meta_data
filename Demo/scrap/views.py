@@ -102,19 +102,10 @@ def Scraping(request):
         print(f"Open Graph  is smaller than 60 characters {len(meta_graph)}characters")
         context["meta_graph_msg"] = f"Open Graph  is smaller than 60 characters {len(meta_graph)}characters"
         
-    print(meta_graph)
+
+
     context["meta_graph"] = ""
 
-    # context={
-    #     'url':url,
-    #     'meta_title':meta_title,
-    #     'meta_desc':meta_desc,
-    #     'meta_key':meta_key,
-    #     'meta_view':meta_view,
-    #     'meta_rob':meta_rob,
-    #     'meta_graph':meta_graph
-        
-    # }
-    print(context)
+
    
-    return render(request,"Home.html",context,{'url': url})
+    return render(request,"Home.html",context)
