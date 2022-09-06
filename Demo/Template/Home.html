@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraping Tool</title>
+</head>
+<body>
+
+<form action='/' id="update" method="POST">
+    {% csrf_token %}
+
+    <label for="">Enter Url </label>
+        <input type="text" id={{url}} placeholder="enter url"><br><br>
+
+        <button type="button" form="" value="button" onclick="submitData({id})">Submit</button><br><br>
+     
+        <table border="2" width="600px"> 
+
+        <tr>
+        <th><label for="">Meta Title</label><br><br></th>
+        
+             <td>   {{meta_title_msg}}<br>{{meta_title}}</td>
+        </tr>
+
+        <tr>
+        <th><label for="">Meta Keyword</label><br><br></th>
+        <td>{{meta_desc_msg}}<br>{{meta_desc}}</td>
+        </tr>
+
+        <tr>
+        <th><label for="">Meta Description</label><br><br></th>
+        <td> {{meta_key_msg}}<br>{{meta_key}}</td>
+        </tr>
+
+        <tr>
+        <th><label for="">Meta Viewport</label><br><br></th>
+        <td>{{meta_view_msg}}<br>{{meta_view}}</td>
+        </tr>
+
+        <tr>
+        <th><label for="">Meta Robots</label><br><br></th>
+        <td>{{meta_robots_msg}}<br>{{meta_rob}}</td>
+        </tr>    
+        
+        <tr>
+        <th><label for="">Open Graph</label><br><br></th>
+        <td>{{meta_graph_msg}}<br>{{meta_graph}}</td>
+        </tr> 
+       
+    <table>
+</form>
+</body>
+<script>
+    function submitData(id){
+		let form =  document.getElementById('update')
+		form.action = "/"
+		form.submit()
+	}
+</script>
+</html>
