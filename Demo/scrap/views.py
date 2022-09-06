@@ -5,9 +5,8 @@ from django.shortcuts import render
 import metadata_parser 
 # Create your views here.
 def Scraping(request):
-    print(request.GET)
+
     url= request.GET.get('url', None)
-    print(url, "----")
     context = dict()
     if url:
         
